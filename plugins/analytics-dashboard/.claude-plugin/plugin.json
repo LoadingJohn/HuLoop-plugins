@@ -1,0 +1,11 @@
+{
+  "name": "analytics-dashboard",
+  "description": "Real-time analytics and insights generation for data analysis projects with visualization helpers and performance metrics",
+  "author": {
+    "name": "HuLoop Community",
+    "email": "plugins@huloop.dev"
+  },
+  "version": "1.0.0",
+  "license": "MIT",
+  "keywords": ["analytics", "data-analysis", "visualization", "metrics", "reporting"]
+}

@@ -1,0 +1,11 @@
+{
+  "name": "template-generator",
+  "description": "Generate boilerplate code and project templates for rapid development with customizable scaffolding",
+  "author": {
+    "name": "HuLoop Community",
+    "email": "plugins@huloop.dev"
+  },
+  "version": "1.0.0",
+  "license": "MIT",
+  "keywords": ["templates", "scaffolding", "boilerplate", "code-generation", "project-setup"]
+}

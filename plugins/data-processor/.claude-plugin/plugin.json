@@ -1,0 +1,11 @@
+{
+  "name": "data-processor",
+  "description": "Advanced data transformation and processing capabilities for ETL workflows with format conversion and validation",
+  "author": {
+    "name": "HuLoop Community",
+    "email": "plugins@huloop.dev"
+  },
+  "version": "1.0.0",
+  "license": "MIT",
+  "keywords": ["data-processing", "etl", "transformation", "validation", "conversion"]
+}
