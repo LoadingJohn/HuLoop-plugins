@@ -1,0 +1,44 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "huloop-plugins",
+  "description": "HuLoop plugins marketplace with analytics, data processing, and code generation tools",
+  "owner": {
+    "name": "HuLoop Community",
+    "email": "plugins@huloop.dev"
+  },
+  "plugins": [
+    {
+      "name": "analytics-dashboard",
+      "description": "Real-time analytics and insights generation for data analysis projects with visualization helpers and performance metrics",
+      "category": "productivity",
+      "source": "./plugins/analytics-dashboard",
+      "author": {
+        "name": "HuLoop Community",
+        "email": "plugins@huloop.dev"
+      },
+      "homepage": "https://github.com/LoadingJohn/HuLoop-plugins/tree/main/plugins/analytics-dashboard"
+    },
+    {
+      "name": "data-processor",
+      "description": "Advanced data transformation and processing capabilities for ETL workflows with format conversion and validation",
+      "category": "development",
+      "source": "./plugins/data-processor",
+      "author": {
+        "name": "HuLoop Community",
+        "email": "plugins@huloop.dev"
+      },
+      "homepage": "https://github.com/LoadingJohn/HuLoop-plugins/tree/main/plugins/data-processor"
+    },
+    {
+      "name": "template-generator",
+      "description": "Generate boilerplate code and project templates for rapid development with customizable scaffolding",
+      "category": "development",
+      "source": "./plugins/template-generator",
+      "author": {
+        "name": "HuLoop Community",
+        "email": "plugins@huloop.dev"
+      },
+      "homepage": "https://github.com/LoadingJohn/HuLoop-plugins/tree/main/plugins/template-generator"
+    }
+  ]
+}

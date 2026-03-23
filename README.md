@@ -1,255 +1,117 @@
-# HuLoop Plugins
+# HuLoop Plugins Marketplace
 
-A curated collection of Claude Code plugins for the HuLoop ecosystem. This marketplace extends Claude's capabilities with specialized tools, skills, and integrations.
+A curated collection of Claude Code plugins for the HuLoop ecosystem. Easy-to-use tools for analytics, data processing, and code generation.
 
-## 📚 Overview
+## 🚀 Quick Start
 
-HuLoop Plugins provides a standardized plugin architecture that integrates seamlessly with Claude Code. Plugins can add custom skills, slash commands, MCP server integrations, and agent capabilities.
+### Add the Marketplace to Claude Code
 
-## 🚀 Getting Started
+1. Open Claude Code
+2. Type `/plugin` and select "Add marketplace"
+3. Enter this URL: `https://github.com/LoadingJohn/HuLoop-plugins`
+4. Click "Sync"
 
-### Installing Plugins
+### Install Plugins
 
-To install a plugin from this repository:
-
-```bash
-/plugin install plugin-name@huloop-plugins
+Once added, install any plugin with:
+```
+/plugin install plugin-name
 ```
 
-Or discover plugins in Claude Code:
+Or browse all available plugins:
 ```
 /plugin > Discover > HuLoop Plugins
 ```
 
-### Plugin Structure
-
-Each plugin follows this standard structure:
-
-```
-plugin-name/
-├── .claude-plugin/
-│   └── plugin.json           # Plugin metadata (required)
-├── .mcp.json                 # MCP server config (optional)
-├── skills/                   # Skill definitions (recommended)
-│   └── feature-name/
-│       └── SKILL.md          # Skill implementation
-├── commands/                 # Legacy slash commands (optional)
-└── README.md                 # Plugin documentation
-```
-
 ## 📦 Available Plugins
 
-### Core Plugins
-
-#### 1. **Analytics Dashboard** (`analytics-dashboard`)
+### 1. Analytics Dashboard
 Real-time analytics and insights generation for data analysis projects.
 
-**Features:**
-- Data visualization helpers
-- Performance metrics calculation
-- Trend analysis
-- Report generation
+**Skills:**
+- `/generate-metrics` - Calculate statistics from JSON/CSV data
+- `/create-report` - Generate professional analytics reports
 
-**Installation:**
-```bash
-/plugin install analytics-dashboard@huloop-plugins
+**Features:**
+- Statistical analysis (mean, median, standard deviation)
+- Distribution analysis and trends
+- Multi-format report generation (HTML, Markdown, JSON)
+
+**Example:**
+```
+/generate-metrics sales_data.csv
+/create-report q1-performance html
 ```
 
 ---
 
-#### 2. **Data Processor** (`data-processor`)
-Advanced data transformation and processing capabilities for ETL workflows.
+### 2. Data Processor
+Advanced data transformation and ETL workflows with format conversion and validation.
+
+**Skills:**
+- `/validate-data` - Validate and sanitize data files
+- `/transform-data` - Convert between formats (JSON, CSV, XML, YAML, TSV, JSONL)
 
 **Features:**
-- Data validation and sanitization
-- Format conversion (JSON, CSV, XML)
-- Batch processing
-- Schema detection
+- Type and format validation
+- Schema enforcement
+- Field mapping and transformations
+- Multi-format support
 
-**Installation:**
-```bash
-/plugin install data-processor@huloop-plugins
+**Example:**
+```
+/validate-data users.csv user_schema.json
+/transform-data orders.csv --to json --map field_mapping.json
 ```
 
 ---
 
-#### 3. **Template Generator** (`template-generator`)
+### 3. Template Generator
 Generate boilerplate code and project templates for rapid development.
 
+**Skills:**
+- `/scaffold-project` - Generate complete project structures
+- `/generate-component` - Create component templates for frameworks
+
 **Features:**
-- Project scaffolding
-- Component templates
-- Configuration generators
-- Code snippet library
+- Multi-framework support (React, Vue, Angular, etc.)
+- Full-stack templates (MERN, LAMP, etc.)
+- Component templates with tests
+- Auto-generated configuration
 
-**Installation:**
-```bash
-/plugin install template-generator@huloop-plugins
+**Example:**
+```
+/scaffold-project my-app react --typescript
+/generate-component Button react --typescript --with-tests
 ```
 
 ---
 
-## 🔧 Plugin Development
+## 📚 Documentation
 
-### Creating a New Plugin
+Each plugin includes comprehensive documentation:
+- Detailed feature lists
+- Parameter descriptions
+- Real-world usage examples
+- Troubleshooting guides
 
-1. **Create directory structure:**
-   ```bash
-   mkdir -p plugins/my-plugin/.claude-plugin
-   mkdir -p plugins/my-plugin/skills/my-skill
-   ```
-
-2. **Create `plugin.json`:**
-   ```json
-   {
-     "name": "my-plugin",
-     "description": "What your plugin does",
-     "author": {
-       "name": "Your Name",
-       "email": "your@email.com"
-     }
-   }
-   ```
-
-3. **Create skills in `skills/my-skill/SKILL.md`:**
-   ```markdown
-   ---
-   name: My Skill
-   description: What this skill does
-   version: 1.0.0
-   argument-hint: (optional arguments)
-   allowed-tools: [Read, Glob, Grep, Bash]
-   ---
-
-   # Implementation
-
-   Your skill implementation here...
-   ```
-
-4. **Add documentation in `README.md`**
-
-### Plugin.json Specification
-
-| Field | Type | Required | Description |
-|-------|------|----------|-------------|
-| `name` | string | ✅ | Plugin identifier (lowercase, hyphens) |
-| `description` | string | ✅ | Required description of plugin purpose |
-| `author` | object | ✅ | `{ name: string, email: string }` |
-| `version` | string | ❌ | Semantic versioning |
-| `license` | string | ❌ | License identifier |
-| `keywords` | array | ❌ | Search keywords |
-
-### Skill.md Specification
-
-**YAML Frontmatter:**
-```yaml
----
-name: Skill Name
-description: What the skill does (triggers AI invocation)
-version: 1.0.0
-argument-hint: (optional parameter hints)
-allowed-tools: [List, Of, Tools]
----
-```
-
-**Supported Tools:**
-- `Read` - Read files
-- `Glob` - Find files by pattern
-- `Grep` - Search file contents
-- `Bash` - Execute shell commands
-- `Edit` - Edit files
-- `Write` - Create files
-- Plus all other Claude Code tools
-
-## 📋 Submission Guidelines
-
-### Community Plugin Submission
-
-To submit your plugin to HuLoop Plugins:
-
-1. **Quality Standards:**
-   - Clear, comprehensive README
-   - Error handling and validation
-   - Security best practices
-   - No external API keys in code
-
-2. **Documentation:**
-   - Usage examples
-   - Parameter descriptions
-   - Troubleshooting guide
-   - License specification
-
-3. **Submission Process:**
-   - Fork this repository
-   - Add your plugin to `/external_plugins/{plugin-name}`
-   - Create a pull request with description
-   - Wait for review and approval
-
-4. **Security Review:**
-   - No hardcoded credentials
-   - Proper input validation
-   - Safe shell command usage
-   - No unauthorized external calls
-
-## 📂 Directory Structure
-
-```
-HuLoop-plugins/
-├── plugins/                          # Official HuLoop plugins
-│   ├── analytics-dashboard/
-│   ├── data-processor/
-│   └── template-generator/
-├── external_plugins/                 # Community-contributed plugins
-├── PLUGIN_TEMPLATE.md               # Plugin development template
-└── README.md                         # This file
-```
-
-## 🔗 Integration Methods
-
-### Skills (Recommended)
-Modern approach for both AI-triggered and user-invoked capabilities.
-- Located in `skills/<name>/SKILL.md`
-- YAML frontmatter for metadata
-- Markdown for implementation
-
-### Commands (Legacy)
-Older approach using `commands/*.md` directory structure.
-- Still functional but not recommended for new plugins
-- Use skills format for new development
-
-### MCP Servers (Advanced)
-Model Context Protocol server integration via `.mcp.json`
-- External tool integration
-- HTTP server configuration
-- Context-aware activation
+View plugin READMEs:
+- [Analytics Dashboard](./plugins/analytics-dashboard/README.md)
+- [Data Processor](./plugins/data-processor/README.md)
+- [Template Generator](./plugins/template-generator/README.md)
 
 ## 🤝 Contributing
 
-We welcome contributions! Please ensure your plugin:
-
-- ✅ Follows the standard directory structure
-- ✅ Includes comprehensive documentation
-- ✅ Has clear error handling
-- ✅ Adheres to security best practices
-- ✅ Works with Claude Code
-
-See [CONTRIBUTING.md](CONTRIBUTING.md) for detailed guidelines.
+Submit your own plugins! Read [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 
 ## 📄 License
 
-HuLoop Plugins are available under the MIT License. Individual plugins may have their own licenses—see each plugin's README for details.
+MIT License - See [LICENSE](LICENSE) file
 
 ## 🆘 Support
 
-- **Documentation:** See individual plugin README files
 - **Issues:** [GitHub Issues](https://github.com/LoadingJohn/HuLoop-plugins/issues)
-- **Discussions:** [GitHub Discussions](https://github.com/LoadingJohn/HuLoop-plugins/discussions)
-
-## 📚 Resources
-
-- [Claude Code Documentation](https://code.claude.com/docs/en/plugins)
-- [Official Claude Plugins](https://github.com/anthropics/claude-plugins-official)
-- [Model Context Protocol (MCP)](https://modelcontextprotocol.io)
+- **Questions:** [GitHub Discussions](https://github.com/LoadingJohn/HuLoop-plugins/discussions)
 
 ---
 
